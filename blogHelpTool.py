@@ -1,5 +1,7 @@
 import os
 import sys
+import bs4
+from bs4 import BeautifulSoup
 import openpyxl
 from openpyxl import workbook
 
@@ -17,8 +19,8 @@ height = sheet.max_row
 print(str(height - 1) + ' items found. Processing...')
 
 
-#Store data on content variable
-content += '''[su_table class="custom-su-table" responsive="yes"]
+#Store data on spreadsheetText variable
+spreadsheetText = '''[su_table class="custom-su-table" responsive="yes"]
 <table>
 <tr class="header">
 <td>Box Art</td>
@@ -29,24 +31,27 @@ content += '''[su_table class="custom-su-table" responsive="yes"]
 </tr>'''
 
 for i in range(2, height+1):
-    #Take href value from column 1, add it to an a tag with column 2's info
-    nameString = '^^^'
+    #Take a tag from column 1's data, add it to an a tag with column 2's info
+    itemHtml = str(sheet.cell(row=i, column=1).value)
+    soup = BeautifulSoup(itemHtml, 'html.parser')
+    gameaTag = str(soup.a)
 
     #Write values from each column
     itemDetails = '\n\n<tr>'
-    for j in range(1, 5):
-        if j == 2:
+    for j in range(1, 6):
+        cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
 
-        else:
-            cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
+        if j == 2:  #Special clause for 2nd column's data
+            cellInfo = '\n<td>' + gameaTag + '\">' + str(sheet.cell(row=i, column=j).value) + '</a></td>'
 
+        #Write completed cellInfo to itemDetails
         itemDetails += cellInfo
-    #itemDetails += sheet.cell(row=i, column=1).value + '</td>\n<td>' + nameString + '</td>\n<td>' + sheet.cell(row=i, column=3).value + '</td>\n<td>' + sheet.cell(row=i, column=4).value + '</td>\n<td>' + sheet.cell(row=i, column=5).value + '</td>\n</tr>'
-    content += itemDetails + '</tr>'
-#End the su_table tag
-content += '\n[/su_table]'
+
+    spreadsheetText += itemDetails + '\n</tr>'
+
+spreadsheetText += '\n[/su_table]'
 
 #Write out value
 file = open('blogHelp.txt', 'w+')
-file.write(content)
+file.write(spreadsheetText)
 file.close()
