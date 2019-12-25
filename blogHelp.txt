@@ -9,8 +9,8 @@
 </tr>
 
 <tr>
-<td>
-
-<tr>
-<td>
+<td>cool image here</td>
+<td>cool ocean</td>
+<td>2019-04-30 00:00:00</td>
+<td>20 hours</td>
 [/su_table]
