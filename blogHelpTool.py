@@ -41,7 +41,7 @@ for i in range(2, height+1):
         cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
 
         if j == 2:  #Special clause for 2nd column's data
-            cellInfo = '\n<td>' + gameaTag + '\">' + str(sheet.cell(row=i, column=2).value) + '</a></td>'
+            cellInfo = '\n<td>' + gameaTag + '>' + str(sheet.cell(row=i, column=2).value) + '</a></td>'
             linkHeaders = linkHeaders+ '<h2>' + gameaTag  + str(sheet.cell(row=i, column=2).value) + '</a></h2>\n'
 
         #Write completed cellInfo to itemDetails
