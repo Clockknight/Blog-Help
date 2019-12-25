@@ -10,7 +10,21 @@
 
 <tr>
 <td>cool image here</td>
+</tr>
 <td>cool ocean</td>
-<td>2019-04-30 00:00:00</td>
+</tr>
+<td>4 - 30</td>
+</tr>
 <td>20 hours</td>
+</tr>
+
+<tr>
+<td>dumb image here</td>
+</tr>
+<td>lame street</td>
+</tr>
+<td>1 - 2</td>
+</tr>
+<td>2 minutes</td>
+</tr>
 [/su_table]

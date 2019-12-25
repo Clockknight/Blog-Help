@@ -30,7 +30,7 @@ content += '''[su_table class="custom-su-table" responsive="yes"]
 <td>Rating</td>
 </tr>'''
 
-for i in range(2, height):
+for i in range(2, height+1):
     #Take href value from column 1, add it to an a tag with column 2's info
     nameString = '^^^'
 
@@ -38,7 +38,7 @@ for i in range(2, height):
     item = '\n\n<tr>'
     for j in range(1, 5):
         body = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
-        item += body
+        item += body + '\n</tr>'
 
     #item += sheet.cell(row=i, column=1).value + '</td>\n<td>' + nameString + '</td>\n<td>' + sheet.cell(row=i, column=3).value + '</td>\n<td>' + sheet.cell(row=i, column=4).value + '</td>\n<td>' + sheet.cell(row=i, column=5).value + '</td>\n</tr>'
     content += item
