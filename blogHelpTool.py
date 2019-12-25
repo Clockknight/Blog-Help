@@ -11,14 +11,6 @@ if sys.argv[1][-5:] != '.xlsx' or len(sys.argv) != 2:
     sys.exit()
 #os.exists check
 
-#Create variables based on spreadsheet
-book = openpyxl.load_workbook(str(sys.argv[1]))
-sheet = book.active
-    #Height variable
-height = sheet.max_row
-print(str(height - 1) + ' items found. Processing...')
-
-
 #Store data on spreadsheetText variable
 spreadsheetText = '''[su_table class="custom-su-table" responsive="yes"]
 <table>
@@ -29,6 +21,13 @@ spreadsheetText = '''[su_table class="custom-su-table" responsive="yes"]
 <td>Playtime</td>
 <td>Rating</td>
 </tr>'''
+linkHeaders = ''
+#Create variables based on spreadsheet
+book = openpyxl.load_workbook(str(sys.argv[1]))
+sheet = book.active
+    #Height variable
+height = sheet.max_row
+print(str(height - 1) + ' items found. Processing...')
 
 for i in range(2, height+1):
     #Take a tag from column 1's data, add it to an a tag with column 2's info
@@ -42,14 +41,16 @@ for i in range(2, height+1):
         cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
 
         if j == 2:  #Special clause for 2nd column's data
-            cellInfo = '\n<td>' + gameaTag + '\">' + str(sheet.cell(row=i, column=j).value) + '</a></td>'
+            cellInfo = '\n<td>' + gameaTag + '\">' + str(sheet.cell(row=i, column=2).value) + '</a></td>'
+            linkHeaders = linkHeaders+ '<h2>' + gameaTag  + str(sheet.cell(row=i, column=2).value) + '</a></h2>\n'
 
         #Write completed cellInfo to itemDetails
         itemDetails += cellInfo
 
     spreadsheetText += itemDetails + '\n</tr>'
 
-spreadsheetText += '\n[/su_table]'
+spreadsheetText += '\n[/su_table]\n\n'
+spreadsheetText += linkHeaders
 
 #Write out value
 file = open('blogHelp.txt', 'w+')
