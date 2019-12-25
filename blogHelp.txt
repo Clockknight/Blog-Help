@@ -1,0 +1,16 @@
+[su_table class="custom-su-table" responsive="yes"]
+<table>
+<tr class="header">
+<td>Box Art</td>
+<td>Game</td>
+<td>Player(s)</td>
+<td>Playtime</td>
+<td>Rating</td>
+</tr>
+
+<tr>
+<td>
+
+<tr>
+<td>
+[/su_table]
