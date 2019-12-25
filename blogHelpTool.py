@@ -3,8 +3,6 @@ import sys
 import openpyxl
 from openpyxl import workbook
 
-content = ''
-
 #.xlsx argv check
 if sys.argv[1][-5:] != '.xlsx' or len(sys.argv) != 2:
     print("Apologies. The argument provided did not lead to a valid .xlsx file. Please try again.")
@@ -35,13 +33,16 @@ for i in range(2, height+1):
     nameString = '^^^'
 
     #Write values from each column
-    item = '\n\n<tr>'
+    itemDetails = '\n\n<tr>'
     for j in range(1, 5):
-        body = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
-        item += body + '\n</tr>'
+        if j == 2:
 
-    #item += sheet.cell(row=i, column=1).value + '</td>\n<td>' + nameString + '</td>\n<td>' + sheet.cell(row=i, column=3).value + '</td>\n<td>' + sheet.cell(row=i, column=4).value + '</td>\n<td>' + sheet.cell(row=i, column=5).value + '</td>\n</tr>'
-    content += item
+        else:
+            cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
+
+        itemDetails += cellInfo
+    #itemDetails += sheet.cell(row=i, column=1).value + '</td>\n<td>' + nameString + '</td>\n<td>' + sheet.cell(row=i, column=3).value + '</td>\n<td>' + sheet.cell(row=i, column=4).value + '</td>\n<td>' + sheet.cell(row=i, column=5).value + '</td>\n</tr>'
+    content += itemDetails + '</tr>'
 #End the su_table tag
 content += '\n[/su_table]'
 
@@ -49,5 +50,3 @@ content += '\n[/su_table]'
 file = open('blogHelp.txt', 'w+')
 file.write(content)
 file.close()
-
-#Save
