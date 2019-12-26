@@ -50,7 +50,7 @@ for i in range(2, height+1):
 
     spreadsheetText += itemDetails + '\n</tr>'
 
-spreadsheetText += '\n[/su_table]\n\n'
+spreadsheetText += '\n</table>\n[/su_table]\n\n'
 spreadsheetText += linkHeaders
 
 #Write out value
