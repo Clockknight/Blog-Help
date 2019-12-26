@@ -36,8 +36,8 @@ for i in range(2, height+1):
     soup = BeautifulSoup(itemHtml, 'html.parser')
     gameaTag = soup.a#Select first a tag in html
     soup.img.decompose()
-
-    #insert str(sheet.cell(row=i, column=2).value) into gameaTag value
+    gameaTag.insert(1, str(sheet.cell(row=i, column=2).value))
+    #insert  into gameaTag value
 
     gameaTag = str(gameaTag)
 

@@ -10,7 +10,7 @@
 
 <tr>
 <td><a target="_blank" href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A2HD40E&linkCode=as2&tag=rft2019-20&linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B00A2HD40E&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=rft2019-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=rft2019-20&l=am2&o=1&a=B00A2HD40E" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></td>
-<td><a href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A2HD40E&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer" target="_blank"></a>Pandemic</a></td>
+<td><a href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A2HD40E&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer" target="_blank">Pandemic</a></td>
 <td>2 - 4</td>
 <td>45 min</td>
 <td>9.2</td>
@@ -18,7 +18,7 @@
 
 <tr>
 <td><a target="_blank" href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B072BG9Z9V&linkCode=as2&tag=rft2019-20&linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B072BG9Z9V&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=rft2019-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=rft2019-20&l=am2&o=1&a=B072BG9Z9V" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></td>
-<td><a href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B072BG9Z9V&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer" target="_blank"></a>Aeons End: 2nd Edition</a></td>
+<td><a href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B072BG9Z9V&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer" target="_blank">Aeons End: 2nd Edition</a></td>
 <td>1 - 4</td>
 <td>60 min</td>
 <td>8.9</td>
@@ -26,5 +26,5 @@
 </table>
 [/su_table]
 
-<h3><a href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A2HD40E&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer" target="_blank"></a></h3>
-<h3><a href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B072BG9Z9V&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer" target="_blank"></a></h3>
+<h3><a href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A2HD40E&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer" target="_blank">Pandemic</a></h3>
+<h3><a href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B072BG9Z9V&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer" target="_blank">Aeons End: 2nd Edition</a></h3>
