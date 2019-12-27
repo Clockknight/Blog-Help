@@ -11,6 +11,7 @@ if sys.argv[1][-5:] != '.xlsx' or len(sys.argv) != 2:
     sys.exit()
 #os.exists check
 
+
 #Store data on spreadsheetText variable
 spreadsheetText = '''[su_table class="custom-su-table" responsive="yes"]
 <table>
@@ -33,7 +34,12 @@ for i in range(2, height+1):
     #Take a tag from column 1's data, add it to an a tag with column 2's info
     itemHtml = str(sheet.cell(row=i, column=1).value)
     soup = BeautifulSoup(itemHtml, 'html.parser')
-    gameaTag = str(soup.a)
+    gameaTag = soup.a#Select first a tag in html
+    soup.img.decompose()
+    gameaTag.insert(1, str(sheet.cell(row=i, column=2).value))
+    #insert  into gameaTag value
+
+    gameaTag = str(gameaTag)
 
     #Write values from each column
     itemDetails = '\n\n<tr>'
@@ -41,15 +47,15 @@ for i in range(2, height+1):
         cellInfo = '\n<td>' + str(sheet.cell(row=i, column=j).value) + '</td>'
 
         if j == 2:  #Special clause for 2nd column's data
-            cellInfo = '\n<td>' + gameaTag + '>' + str(sheet.cell(row=i, column=2).value) + '</a></td>'
-            linkHeaders = linkHeaders+ '<h2>' + gameaTag  + str(sheet.cell(row=i, column=2).value) + '</a></h2>\n'
+            cellInfo = '\n<td>' + gameaTag + '</td>'
+            linkHeaders = linkHeaders+ '<h3>' + gameaTag  + '</h3>\n'
 
         #Write completed cellInfo to itemDetails
         itemDetails += cellInfo
 
     spreadsheetText += itemDetails + '\n</tr>'
 
-spreadsheetText += '\n[/su_table]\n\n'
+spreadsheetText += '\n</table>\n[/su_table]\n\n'
 spreadsheetText += linkHeaders
 
 #Write out value
