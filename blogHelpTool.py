@@ -31,6 +31,7 @@ height = sheet.max_row
 print(str(height - 1) + ' items found. Processing...')
 
 for i in range(2, height+1):
+
     #Take a tag from column 1's data, add it to an a tag with column 2's info
     itemHtml = str(sheet.cell(row=i, column=1).value)
     soup = BeautifulSoup(itemHtml, 'html.parser')
@@ -38,9 +39,12 @@ for i in range(2, height+1):
     for img in soup('img'):
         img.decompose()
     gameaTag.insert(1, str(sheet.cell(row=i, column=2).value))
-    #insert  into gameaTag value
-
     gameaTag = str(gameaTag)
+
+    #Find amazonURL from a tag's href
+    for a in soup('a'):
+        amazonURL = a['href']
+
 
     #Write values from each column
     itemDetails = '\n\n<tr>'
@@ -49,7 +53,7 @@ for i in range(2, height+1):
 
         if j == 2:  #Special clause for 2nd column's data
             cellInfo = '\n<td>' + gameaTag + '</td>'
-            linkHeaders = linkHeaders+ '<h3>' + gameaTag  + '</h3>\n'
+            linkHeaders += '<h3>' + gameaTag  + '</h3>' + '\n[su_button url="' + amazonURL + '" target="blank" size="4" style="default" background="#EEC562" color="#000000" class="check-amazon"]Check availability on Amazon![/su_button]' + '\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer">\n</div>\n\n'
 
         #Write completed cellInfo to itemDetails
         itemDetails += cellInfo

@@ -27,4 +27,12 @@
 [/su_table]
 
 <h3><a href="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00A2HD40E&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=c1c83b429dd96935684b6b7aeb0e6e07" rel="noopener noreferrer" target="_blank">Pandemic</a></h3>
+[su_button url="https://www.amazon.com/gp/product/B00A2HD40E/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00A2HD40E&linkCode=as2&tag=rft2019-20&linkId=c1c83b429dd96935684b6b7aeb0e6e07" target="blank" size="4" style="default" background="#EEC562" color="#000000" class="check-amazon"]Check availability on Amazon![/su_button]
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer">
+</div>
+
 <h3><a href="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B072BG9Z9V&amp;linkCode=as2&amp;tag=rft2019-20&amp;linkId=70ecda163c7ce2aad43f388676b9c490" rel="noopener noreferrer" target="_blank">Aeons End: 2nd Edition</a></h3>
+[su_button url="https://www.amazon.com/gp/product/B072BG9Z9V/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B072BG9Z9V&linkCode=as2&tag=rft2019-20&linkId=70ecda163c7ce2aad43f388676b9c490" target="blank" size="4" style="default" background="#EEC562" color="#000000" class="check-amazon"]Check availability on Amazon![/su_button]
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer">
+</div>
+
