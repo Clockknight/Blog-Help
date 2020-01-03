@@ -20,7 +20,6 @@ gameOperant = True
 playerOperant = True
 timeOperant = True
 ratingOperant = True
-
 noFilename = True
 columnEmpty = True
 
@@ -28,8 +27,8 @@ columnEmpty = True
 if argumentCount > 1:
     for n in (1, argumentCount - 1):
         if str(sys.argv[n])[-5:] == '.xlsx':
-            filename = sys.argv[n]
-            noFilename = False
+            filename = sys.argv[n]#save .xlsx file arguments as filename
+            noFilename = False#Since we have a file now, the explanatory text can be skipped if the file is valid.
         if str(sys.argv[n]) == '-a':
             artOperant = False
         if str(sys.argv[n]) == '-g':
@@ -44,9 +43,17 @@ if argumentCount > 1:
 while True:#Loop input until input leads to a valid file.
 
     if noFilename:
-        print('\nPlease input the path to a valid .xlsx file.\n\t(Valid .xlsx files specifically have 5 columns of data.)')
-        filename = input()
-        print('Validating file...')
+        print('\nPlease input the path to a valid .xlsx file.\n\t(Valid .xlsx files specifically have 5 columns of data.)\n\t\tAdditionally, type "QUIT" to close the program.')
+        filename = input()#Let the user input the name or path of some file
+
+        if filename == 'QUIT':
+            print('Closing program...')
+            sys.exit()#Close out the program.
+
+        print('Validating file...')#Give the user feedback, let them know something is happening
+
+
+
 
     if filename[-5:] == '.xlsx' and os.path.isfile(filename):
         #Since the file given was an xlsx file, create variables based on the spreadsheet given.
@@ -55,10 +62,11 @@ while True:#Loop input until input leads to a valid file.
         width = sheet.max_column
         height = sheet.max_row
 
+        #Go through each cell in the "rectangle" of max dimensions give, only checking if any of them are non-empty
         for x in range(1, width + 1):
             for y in range (1, height + 1):
                 if sheet.cell(row=y, column=x).value != 0:
-                    columnEmpty = False
+                    columnEmpty = False #If they are, then the column can be upticked
 
             if not columnEmpty:
                 columnCount += 1
@@ -66,18 +74,19 @@ while True:#Loop input until input leads to a valid file.
         if columnCount == 5:
             print('File validated!\n\tContinuing...\n\n')
             break
+            #Break out of the loop, begin processing the file.
 
         else:
             failClause = 'The file given had ' + str(columnCount) + ' non-empty columns. Please change this to 5 non-empty columns.\n'
 
     else:
-        failClause = 'User did not give an .xlsx file.\n'
+        failClause = 'User did not give an existing .xlsx file.\n'#
+        noFilename = True #Change code so the explanatory prints at the start of the loop are activated.
 
-    #Failure case below. Print out the reason.
-    print('Process failed. Reason:\n\t%s' % failClause)
+    print('Process failed. Reason:\n\t%s' % failClause)#Catchall failure print, explains what the user did wrong
+
 
 #Once the file has been validated, the code continues to process the sheet.
-
 #Store data on spreadsheetText variable
 spreadsheetText = '[su_table class="custom-su-table" responsive="yes"]\n<table>\n<tr class="header'
 
