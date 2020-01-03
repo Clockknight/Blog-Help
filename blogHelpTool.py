@@ -9,6 +9,9 @@ from openpyxl import workbook
 #Initialize variables
 filename = ''
 linkHeaders = ''
+userinput = ''
+
+columnCount = 0
 
 argumentCount = len(sys.argv)
 
@@ -19,7 +22,6 @@ timeOperant = True
 ratingOperant = True
 
 endValid = False
-columnValid = False
 
 #.xlsx argv check
 if argumentCount > 1:
@@ -37,7 +39,14 @@ if argumentCount > 1:
         if str(sys.argv[n]) == '-r':
             ratingOperant = False
 
-#validity checks + loops
+while filename == '':#Loop until filename takes an input (only .xlsx files can be input)
+        print('\nPlease input the path to a valid .xlsx file.\n\t(Valid .xlsx files specifically have 5 columns of data.)')
+        userinput = input()
+        if userinput[-5:] == '.xlsx':
+            filename = userinput
+
+#Either through argv, or through command line input, filename is now a .xlsx file.
+
 
 
 #Store data on spreadsheetText variable

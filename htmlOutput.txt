@@ -3,6 +3,7 @@
 <tr class="header
 <td>Box Art</td>
 <td>Game</td>
+<td>Player(s)</td>
 <td>Playtime</td>
 <td>Rating</td>
 </tr>
