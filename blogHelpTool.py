@@ -9,7 +9,7 @@ from openpyxl import workbook
 #Initialize variables
 filename = ''
 linkHeaders = ''
-userinput = ''
+failClause = ''
 
 columnCount = 0
 
@@ -21,7 +21,7 @@ playerOperant = True
 timeOperant = True
 ratingOperant = True
 
-endValid = False
+columnEmpty = True
 
 #.xlsx argv check
 if argumentCount > 1:
@@ -39,15 +39,79 @@ if argumentCount > 1:
         if str(sys.argv[n]) == '-r':
             ratingOperant = False
 
-while filename == '':#Loop until filename takes an input (only .xlsx files can be input)
-        print('\nPlease input the path to a valid .xlsx file.\n\t(Valid .xlsx files specifically have 5 columns of data.)')
-        userinput = input()
-        if userinput[-5:] == '.xlsx':
-            filename = userinput
+while True:#Loop input until input leads to a valid file.
 
-#Either through argv, or through command line input, filename is now a .xlsx file.
+    print('\nPlease input the path to a valid .xlsx file.\n\t(Valid .xlsx files specifically have 5 columns of data.)')
+    filename = input()
+    print('Validating file...')
 
+    if filename[-5:] == '.xlsx':
+        #Since the file given was an xlsx file, create variables based on the spreadsheet given.
+        book = openpyxl.load_workbook(filename)
+        sheet = book.active
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 95a110c5272db22c4df1a4a5a6ad473f00afedd3
+        width = sheet.max_column
+        height = sheet.max_row
 
+        width = sheet.max_column
+        height = sheet.max_row
+
+        for x in range(1, width + 1):
+            for y in range (1, height + 1):
+                if sheet.cell(row=y, column=x).value != 0:
+                    columnEmpty = False
+
+            if not columnEmpty:
+                columnCount += 1
+
+        if columnCount == 5:
+            print('File validated!\n\tContinuing...')
+            break
+
+        else:
+            failClause = 'The file given had ' + str(columnCount) + ' non-empty columns. Please change this to 5 non-empty columns.'
+
+    else:
+        failClause = 'User did not give an .xlsx file.'
+
+    #Failure case below. Print out the reason.
+    print('Process failed. Reason:\n\t%s' % failClause)
+
+#Once the file has been validated, the code continues to process the sheet.
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3e2da730007347a698a24135bb0651e44c70309d
+
+        width = sheet.max_column
+        height = sheet.max_row
+
+        for x in range(1, width + 1):
+            for y in range (1, height + 1):
+                if sheet.cell(row=y, column=x).value != 0:
+                    columnEmpty = False
+
+            if not columnEmpty:
+                columnCount += 1
+
+        if columnCount == 5:
+            print('File validated!\n\tContinuing...')
+            break
+
+        else:
+            failClause = 'The file given had ' + str(columnCount) + ' non-empty columns. Please change this to 5 non-empty columns.'
+
+    else:
+        failClause = 'User did not give an .xlsx file.'
+
+    #Failure case below. Print out the reason.
+    print('Process failed. Reason:\n\t%s' % failClause)
+
+#Once the file has been validated, the code continues to process the sheet.
+>>>>>>> 95a110c5272db22c4df1a4a5a6ad473f00afedd3
 
 #Store data on spreadsheetText variable
 spreadsheetText = '[su_table class="custom-su-table" responsive="yes"]\n<table>\n<tr class="header'
@@ -64,11 +128,8 @@ if ratingOperant :
     spreadsheetText += '\n<td>Rating</td>'
 spreadsheetText += '\n</tr>'
 
-#Create variables based on spreadsheet
-book = openpyxl.load_workbook(filename)
-sheet = book.active
+
     #Height variable
-height = sheet.max_row
 print(str(height - 1) + ' items found. Processing...')
 
 for i in range(2, height+1):
