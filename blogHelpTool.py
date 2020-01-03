@@ -55,12 +55,6 @@ while True:#Loop input until input leads to a valid file.
         width = sheet.max_column
         height = sheet.max_row
 
-<<<<<<< HEAD
-=======
-        width = sheet.max_column
-        height = sheet.max_row
-
->>>>>>> 63c87fcb669b01eec54e8412bc809b3223a1681f
         for x in range(1, width + 1):
             for y in range (1, height + 1):
                 if sheet.cell(row=y, column=x).value != 0:
@@ -70,7 +64,6 @@ while True:#Loop input until input leads to a valid file.
                 columnCount += 1
 
         if columnCount == 5:
-<<<<<<< HEAD
             print('File validated!\n\tContinuing...\n\n')
             break
 
@@ -79,16 +72,6 @@ while True:#Loop input until input leads to a valid file.
 
     else:
         failClause = 'User did not give an .xlsx file.\n'
-=======
-            print('File validated!\n\tContinuing...')
-            break
-
-        else:
-            failClause = 'The file given had ' + str(columnCount) + ' non-empty columns. Please change this to 5 non-empty columns.'
-
-    else:
-        failClause = 'User did not give an .xlsx file.'
->>>>>>> 63c87fcb669b01eec54e8412bc809b3223a1681f
 
     #Failure case below. Print out the reason.
     print('Process failed. Reason:\n\t%s' % failClause)
